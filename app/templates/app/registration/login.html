@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XXXX | Iniciar sesión</title>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="./img/svg/LOGOGW.png"
+      class="logo-mini"
+      type="image/x-icon"
+    />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/style.min.css' %}">
+
+  </head>
+
+  <body class="fondo-rojo">
+    <div class="layer"></div>
+    <main class="page-center">
+      <div class="flex-left">
+        <img src="{% static 'app/img/svg/LOGOGW.png' %}" class="tamaño-pequeño" />
+      </div>
+          {% if messages %}
+            {%for mensaje in messages%}
+                <div class="alert{% if mensaje.tags == 'success' %} alert--success(% else %) alert-danger{% endif %}">
+                    <button type="button" class="close"data-dismiss="alert">X</button>
+                    {{ mensaje}}
+                </div>
+            {% endfor %}
+          {%  endif %}
+      <article class="sign-up">
+        <h1 class="sign-up__title">Iniciar sesión</h1>
+        <p class="sign-up__subtitle texto-color">
+          Inicie sesión en su cuenta para continuar
+        </p>
+        <form class="sign-up-form form" action="" method="post">
+                    {% csrf_token %}
+          <label class="form-label-wrapper">
+            <p class="form-label">Correo electrónico</p>
+            <input
+              class="form-input"
+              type="email"
+              placeholder="Introduce tu correo electronico"
+              required
+            />
+          </label>
+          <label class="form-label-wrapper">
+            <p class="form-label">Contraseña</p>
+            <input
+              class="form-input"
+              type="password"
+              placeholder="Introduce tu contraseña"
+              required
+            />
+          </label>
+
+          <label class="form-checkbox-wrapper">
+            <input class="form-checkbox" type="checkbox" required />
+            <span class="form-checkbox-label">Recuerdame la proxima vez</span>
+          </label>
+          <button class="form-btn primary-default-btn transparent-btn" href="{% url 'home' %}" >
+            Iniciar sesión</button
+          ><br />
+          <a class="link-info forget-link" href="{% url 'registro' %}">
+            ¿No tienes una cuenta? registrate aquí</a
+          >
+        </form>
+      </article>
+    </main>
+
+  <!-- Chart library -->
+  <script src="{% static 'app/plugins/chart.min.js' %}"></script>
+  <!-- Icons library -->
+  <script src="{% static 'app/plugins/feather.min.js' %}"></script>
+  <!--query-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <!-- Custom scripts -->
+  
+  <script src="{% static 'app/js/script.js' %}"></script>
+  </body>
+</html>
