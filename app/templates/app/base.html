@@ -100,10 +100,24 @@
                 </li> -->
             </ul>
             <span class="system-menu__title">Administrar</span>
-            <ul class="sidebar-body-menu">
-                  <li>
-                  <a href="{% url 'home' %}"><span class="icon edit" aria-hidden="true"></span>Trivias</a>
-              </li> 
+            <ul class="sidebar-body-menu">                  
+            <li>
+                <a class="show-cat-btn" href="##">
+                    <span class="icon edit" aria-hidden="true"></span>Trivias
+                    <span class="category__btn transparent-btn" title="Open list">
+                        <span class="sr-only">Abrir lista</span>
+                        <span class="icon arrow-down" aria-hidden="true"></span>
+                    </span>
+                </a>
+                <ul class="cat-sub-menu">
+                    <li>
+                        <a href="{% url 'crearTrivia' %}">Agregar nueva trivia</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'adminT' %}">Listar trivias</a>
+                    </li>
+                </ul>
+            </li>        
                 <li>
                     <a class="show-cat-btn" href="##">
                         <span class="icon user-3" aria-hidden="true"></span>Usuarios
@@ -114,10 +128,10 @@
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="users-01.html">Agregar nuevo usuario</a>
+                            <a href="{% url 'crearUsuario' %}">Agregar nuevo usuario</a>
                         </li>
                         <li>
-                            <a href="users-02.html">Listar tabla de usuarios</a>
+                            <a href="{% url 'adminU' %}">Listar tabla de usuarios</a>
                         </li>
                     </ul>
                 </li>

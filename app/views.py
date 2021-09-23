@@ -28,3 +28,15 @@ def registro(request):
 
 def page1(request):
     return render(request,'app/page1.html')
+
+def adminT(request):
+    return render(request,'app/adminT.html')
+
+def adminU(request):
+    return render(request,'app/adminU.html')
+
+def crearUsuario(request):
+    return render(request,'app/crearUsuario.html')
+
+def crearTrivia(request):
+    return render(request,'app/crearTrivia.html')
