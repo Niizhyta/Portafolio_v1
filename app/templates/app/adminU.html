@@ -1,6 +1,44 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block js %}
+<style>
+    .container-table{
+        width: 90%;
+        background-color: white;
+        margin: 50px auto;
+        box-shadow: 0 0 20px #333;
+
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-auto-rows: 50px;
+    }
+    .table-title{
+        grid-column-start: 1;
+        grid-column-end: 5;
+
+        background:#F29D39;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .table-header, .table-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .table-header{
+        font-weight: bold;
+        font-size: 1.3em;
+    }
+    .table-item{
+        padding:  10px;
+        font-size: 1.2em;
+    }
+</style>>
 {% endblock %}
 {% block css %}
 {% endblock %}
@@ -8,66 +46,24 @@
 
 <h1 class="main-title">Administrar Usuarios</h1>
 
-<table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  <table class="table">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">First</th>
-        <th scope="col">Last</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="container-table">
+<div class="table-title">Datos de usuarios</div>
+<div class="table-header">Nombre</div>
+<div class="table-header">Rol</div>
+<div class="table-header">Correo</div>
+<div class="table-header">Estado</div>
+<div class="table-item">Jaime Larrondo</div>
+<div class="table-item">Facilitador</div>
+<div class="table-item">Jaime_la@gamifiwork.cl</div>
+<div class="table-item">Activo</div>
+<div class="table-item">Maria Magdalena</div>
+<div class="table-item">Administrador</div>
+<div class="table-item">Mari_mag@gamifiwork.cl</div>
+<div class="table-item">Activo</div>
+<div class="table-item">Yoshi</div>
+<div class="table-item">Facilitador</div>
+<div class="table-item">Yoshi_m@gamifiwork.cl</div>
+<div class="table-item">Inactivo</div>
+</div>
 
 {% endblock %}
