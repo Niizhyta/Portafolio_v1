@@ -1,10 +1,7 @@
 {% extends 'app/base.html' %} 
 {% load static %} 
 {% block js %}
-<script
-  src="https://kit.fontawesome.com/d5ff9e6164.js"
-  crossorigin="anonymous"
-></script>
+<script  src="https://kit.fontawesome.com/d5ff9e6164.js"   crossorigin="anonymous"></script>
 <style>
   #main-container {
     margin: 150px auto;
@@ -74,11 +71,12 @@
     }
     table thead {
       display: none;
-    }
-  }
   /*modd*/
+
   .derecha{text-align: right;padding: 0%;}
-/* boton*/
+
+  /* boton*/
+
 .button4 {
 background-color: #FF395B; 
   border: none;
@@ -90,7 +88,9 @@ background-color: #FF395B;
   font-size: 15px;
   border-radius: 12px;
 }
+
 /*paginación*/
+
 ul.pagination {
     display: inline-block;
     padding: 0;
@@ -113,7 +113,9 @@ ul.pagination li a.active {
     border-radius: 5px;
 }
 
-ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+ul.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
 
 </style>
 {% endblock %} 
