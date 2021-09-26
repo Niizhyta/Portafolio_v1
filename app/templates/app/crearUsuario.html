@@ -1,16 +1,70 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block js %}
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<style>
+    .button4 {
+background-color: #FF395B; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+</style>
 {% endblock %}
 {% block css %}
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 {% endblock %}
 {% block contenido %}
+    <br><br>
+    
+      <h1 class="sign-up__title">Registro de usuario</h1>
+     
+      <form class="sign-up-form form" action="" method="">
+        <label class="form-label-wrapper">
+          <p class="form-label">Nombre</p>
+          <input
+            class="form-input"
+            type="text"
+            placeholder="Introducir nombre"
+            required
+          />
+        </label>
+        <label class="form-label-wrapper">
+          <p class="form-label">Tipo de cuenta</p>
+          <select class="form-select" name="transporte">
+            <option>Facilitador</option>
 
-<h1 class="main-title">Crear nuevo usuario</h1>
+            <option>Jefe de proyecto</option>
+
+            <option>Administrador</option>
+          </select>
+        </label>
+        <label class="form-label-wrapper">
+          <p class="form-label">Correo electronico</p>
+          <input
+            class="form-input"
+            type="email"
+            placeholder="Introducir correo"
+            required
+          />
+        </label>
+        <label class="form-label-wrapper">
+          <p class="form-label">Contraseña</p>
+          <input
+            class="form-input"
+            type="password"
+            placeholder="Introducir contraseña"
+            required
+          />
+        </label>       
+        <button class="form-btn primary-default-btn transparent-btn button4">
+          Registrar
+        </button>
+      </form>
 
 
 
