@@ -1,13 +1,76 @@
 {% extends 'app/base.html' %}
 {% load static %}
 {% block js %}
+<style>
+    .button4 {
+        background-color: #FF395B;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        border-radius: 12px;
+    }
+
+</style>
 {% endblock %}
 {% block css %}
 {% endblock %}
 {% block contenido %}
+<h1 class="sign-up__title">Inregrese nueva trivia</h1>
 
-<h1 class="main-title">Crear nueva trivia</h1>
-
+<div>
+    <form class="sign-up-form form" action="" method="">
+        <label class="form-label-wrapper">
+            <p class="form-label">Nombre de trivia</p>
+            <input class="form-input" type="text" placeholder="Introducir nombre de trivia" required />
+        </label>
+        <label class="form-label-wrapper">
+            <p class="form-label">Pregunta</p>
+            <input class="form-input" type="text" placeholder="Introduzca pregunta" required />
+        </label>
+    <div class="">
+        <label for="" class="form-label" >Duracion</label>
+        <input type="text" class="form-input" placeholder="Ingrese el tiempo">
+        <label for="" class="form-label" >Puntos</label>
+        <input type="text" class="form-input" placeholder="Ingrese puntos">
+        <label for="" class="form-label">Tipo de preguntas</label>
+        <select class="form-select form-input" name="transporte">
+            <option>Seleccion unica</option>
+            <option>Seleccion multiple</option>
+        </select>
+        </label>
+    </div>
+    <label class="form-label-wrapper">
+        <p class="form-label">Archivo multimedia</p>
+        <input type="file" class="form-input" placeholder="Agregar archivo multimedia" required />
+    </label>
+        <div class="container--flex">
+            <label for="" class="form__label"></label>
+        </div>
+        <label class="form-label-wrapper">
+            <p class="form-label">Pregunta 1</p>
+            <input class="form-input" type="text" placeholder="Introducir respuesta de trivia" required />
+        </label>
+        <label class="form-label-wrapper">
+            <p class="form-label">Pregunta 2</p>
+            <input class="form-input" type="text" placeholder="Introducir respuesta de trivia" required />
+        </label>
+        <label class="form-label-wrapper">
+            <p class="form-label">Pregunta 3</p>
+            <input class="form-input" type="text" placeholder="Introducir respuesta de trivia" required />
+        </label>
+        <label class="form-label-wrapper">
+            <p class="form-label">Pregunta 4</p>
+            <input class="form-input" type="text" placeholder="Introducir respuesta de trivia" required />
+        </label>
+        <button class="form-btn primary-default-btn transparent-btn button4">
+            Agregar pregunta
+        </button>
+    </form>
+</div>
 
 
 {% endblock %}
