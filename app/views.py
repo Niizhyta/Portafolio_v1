@@ -41,4 +41,5 @@ def crearUsuario(request):
 def crearTrivia(request):
     return render(request,'app/crearTrivia.html')
 
-
+def partida(request):
+    return render(request,'app/partida.html')
