@@ -44,4 +44,3 @@ def crearTrivia(request):
 def partida(request):
     return render(request,'app/partida.html')
 
-
