@@ -47,3 +47,6 @@ def partida(request):
 def ruleta(request):
     return render(request,'app/ruleta.html')
 
+def partida(request):
+    return render(request,'app/partida.html')
+
