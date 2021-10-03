@@ -41,12 +41,15 @@ def crearUsuario(request):
 def crearTrivia(request):
     return render(request,'app/crearTrivia.html')
 
-def partida(request):
-    return render(request,'app/partida.html')
+def loginParticipante(request):
+    return render(request,'app/loginParticipante.html')
 
 def ruleta(request):
     return render(request,'app/ruleta.html')
 
 def partida(request):
     return render(request,'app/partida.html')
+    
+def ranking(request):
+    return render(request,'app/ranking.html')
 

@@ -1,0 +1,39 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block js %}
+<script  src="https://kit.fontawesome.com/d5ff9e6164.js"   crossorigin="anonymous"></script>
+{% endblock %}
+{% block css %}
+<style>
+    .borde {
+  
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: rgb(99, 98, 98) 5px solid;
+}
+
+</style>
+{% endblock %}
+{% block contenido %}
+
+<h1 class="main-title">Ranking de participantes</h1>
+ 
+<!-- Custom styles -->
+
+<form class="sign-up-form form" action="" method="">
+    <h1 class="main-title centrado"><a href="#" class="fas fa-trophy colorx"></a> ¡ RANKING ! <a href="#" class="fas fa-trophy colorx"></a></h1>
+
+    <ul  class="main-title">
+        <li class="borde">Item One</li>
+        <li class="borde">Item Two</li>
+    </ul>
+    
+    
+    
+    
+</form>
+
+{% endblock %}
