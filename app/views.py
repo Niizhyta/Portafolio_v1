@@ -53,3 +53,6 @@ def partida(request):
 def ranking(request):
     return render(request,'app/ranking.html')
 
+def iniciarPartida(request):
+    return render(request,'app/iniciarPartida.html')
+
