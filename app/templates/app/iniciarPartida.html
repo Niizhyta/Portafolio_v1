@@ -4,11 +4,129 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicia partida</title>
+    <title>Login participantes</title>
     <link rel="shortcut icon" href="../../static/app/img/svg/LOGOGW.png" type="image/x-icon">
+    <script  src="https://kit.fontawesome.com/d5ff9e6164.js"   crossorigin="anonymous"></script>
+<style>
+  #main-container {
+    margin: 150px auto;
+    width: 600px;
+  }
+
+  table {
+    align-items: center;
+    background-color: white;
+    border-collapse: collapse;
+    font-family: 'Segoe UI';
+    width: 100%;
+    box-shadow: 0 0 20px rgb(163, 163, 163);
+    padding: 50%;
+  }
+  td,
+  th {
+    padding: 20px;
+  }
+  thead {
+    background-color: #f29d39;
+    color: white;
+    border-bottom: rgb(255, 90, 61) 5px solid;
+    text-align: left;
+  }
+
+  main {
+    padding: 1em 2em;
+  }
+
+  .centrado {
+    text-align: center;
+  }
+  .colorx {
+    color: grey;
+  }
+  tr:nth-child(even) {
+    background-color: #ddd;
+  }
+  tr:hover td{
+     background-color: #fcb7c1;
+ }
+
+  
+  /*modd*/
+
+  .derecha{text-align: right;padding: 0%;}
+
+  /* boton*/
+
+.button4 {
+background-color: #FF395B; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+/*paginación*/
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+ul.pagination li a.active {
+    background-color: #FF395B;
+    color: white;
+    border-radius: 5px;
+}
+
+ul.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+@media (max-width: 45em) {
+    table {
+      width: 100%;
+      font-size: 100%;
+    }
+    table td,
+    table th {
+      border: none;
+      text-align: center;
+    }
+    table tr {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid grey;
+      padding: 1em solid grey;
+    }
+    table td[data-titulo] {
+      display: flex;
+    }
+    table td[data-titulo]::before {
+      content: attr(data-titulo);
+      width: 100px;
+      color: rgb(82, 81, 81);
+      font-weight: bold;
+    }
+    table thead {display: none;}
+}
+</style>
     <style>
         .button4 {
-        background-color: #F29D39;
+        background-color: #FF395B;
         border: none;
         color: white;
         padding: 10px 20px;
@@ -31,127 +149,10 @@
         }
         
     </style>
-    <style>
-        #main-container {
-          margin: 150px auto;
-          width: 600px;
-        }
-      
-        table {
-          align-items: center;
-          background-color: white;
-          border-collapse: collapse;
-          font-family: 'Segoe UI';
-          width: 100%;
-          box-shadow: 0 0 20px rgb(163, 163, 163);
-          padding: 50%;
-        }
-        td,
-        th {
-          padding: 20px;
-        }
-        thead {
-          background-color: #f29d39;
-          color: white;
-          border-bottom: rgb(255, 90, 61) 5px solid;
-          text-align: left;
-        }
-      
-        main {
-          padding: 1em 2em;
-        }
-      
-        .centrado {
-          text-align: center;
-        }
-        .colorx {
-          color: grey;
-        }
-        tr:nth-child(even) {
-          background-color: #ddd;
-        }
-        tr:hover td{
-           background-color: #fcb7c1;
-       }
-      
-        
-        /*modd*/
-      
-        .derecha{text-align: right;padding: 0%;}
-      
-        /* boton*/
-      
-      .button4 {
-      background-color: #FF395B; 
-        border: none;
-        color: white;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 15px;
-        border-radius: 12px;
-      }
-      
-      /*paginación*/
-      
-      ul.pagination {
-          display: inline-block;
-          padding: 0;
-          margin: 0;
-      }
-      
-      ul.pagination li {display: inline;}
-      
-      ul.pagination li a {
-          color: black;
-          float: left;
-          padding: 8px 16px;
-          text-decoration: none;
-          border-radius: 5px;
-      }
-      
-      ul.pagination li a.active {
-          background-color: #FF395B;
-          color: white;
-          border-radius: 5px;
-      }
-      
-      ul.pagination li a:hover:not(.active) {
-          background-color: #ddd;
-      }
-      @media (max-width: 45em) {
-          table {
-            width: 100%;
-            font-size: 100%;
-          }
-          table td,
-          table th {
-            border: none;
-            text-align: center;
-          }
-          table tr {
-            display: flex;
-            flex-direction: column;
-            border: 1px solid grey;
-            padding: 1em solid grey;
-          }
-          table td[data-titulo] {
-            display: flex;
-          }
-          table td[data-titulo]::before {
-            content: attr(data-titulo);
-            width: 100px;
-            color: rgb(82, 81, 81);
-            font-weight: bold;
-          }
-          table thead {display: none;}
-      }
-      </style>
       <link rel="stylesheet" href="../../static/app/css/style.css">
       <link rel="stylesheet" href="../../static/app/css/style.min.css">  
 </head>
-<body>
+<div>
     
 <!---->
 <!---->
@@ -160,11 +161,7 @@
     <!-- ! Main nav -->
 <nav class="main-nav--bg">
   <div class="container main-nav">    
-    <div class="main-nav-end">
-      <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
-        <span class="sr-only">sup-menu</span>
-        <span class="icon menu-toggle--gray" aria-hidden="true"></span>
-      </button>      
+    <div class="main-nav-end">      
       <button class="theme-switcher gray-circle-btn" type="button" title="Cambiar tema">
         <span class="sr-only">Cambiar modo</span>
         <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
@@ -176,129 +173,133 @@
 <!---->
 <!---->
 <!---->
-
-<div class="">
+<div class="page-center">
+  
     <form class="sign-up-form form" action="" method="">
-        <h1 class="main-title">Administrar Trivias <div class="derecha"><button class="button4">Iniciar trivia aleatoria</button></h1>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Curso</th>
-                                <th>Tipo</th>
-                                <th>Fecha actualización</th>
-                                <th>Acción</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 1</td>
-                                <td data-titulo="Curso">Curso 1</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha actualización">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 2</td>
-                                <td data-titulo="Curso">Curso 2</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 3</td>
-                                <td data-titulo="Curso">Curso 3</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 4</td>
-                                <td data-titulo="Curso">Curso 4</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 5</td>
-                                <td data-titulo="Curso">Curso 5</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 6</td>
-                                <td data-titulo="Curso">Curso 6</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 7</td>
-                                <td data-titulo="Curso">Curso 7</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 8</td>
-                                <td data-titulo="Curso">Curso 8</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 9</td>
-                                <td data-titulo="Curso">Curso 9</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td data-titulo="Nombre">Trivia 10</td>
-                                <td data-titulo="Curso">Curso 10</td>
-                                <td data-titulo="Tipo">Ruleta</td>
-                                <td data-titulo="Fecha Actualizacion">2018-09-24</td>
-                                <td class="centrado">
-                                    <a href="#" class="fas fa-play colorx"></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table><br>
-                    <div class="centrado">
-                        <ul class="pagination">
-                            <li><a href="#">«</a></li>
-                            <li><a class="active" href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">6</a></li>
-                            <li><a href="#">7</a></li>
-                            <li><a href="#">»</a></li>
-                        </ul>
-                    </div>
-                </form>
+      <h1 class="main-title centrado"><a href="#" class="fas fa-dice colorx"></a> <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
+        <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
+        <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/>
+      </svg> Iniciar Partida <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-joystick" viewBox="0 0 16 16">
+        <path d="M10 2a2 2 0 0 1-1.5 1.937v5.087c.863.083 1.5.377 1.5.726 0 .414-.895.75-2 .75s-2-.336-2-.75c0-.35.637-.643 1.5-.726V3.937A2 2 0 1 1 10 2z"/>
+        <path d="M0 9.665v1.717a1 1 0 0 0 .553.894l6.553 3.277a2 2 0 0 0 1.788 0l6.553-3.277a1 1 0 0 0 .553-.894V9.665c0-.1-.06-.19-.152-.23L9.5 6.715v.993l5.227 2.178a.125.125 0 0 1 .001.23l-5.94 2.546a2 2 0 0 1-1.576 0l-5.94-2.546a.125.125 0 0 1 .001-.23L6.5 7.708l-.013-.988L.152 9.435a.25.25 0 0 0-.152.23z"/>
+      </svg> <a href="#" class="fas fa-dice colorx"> </a><div class="derecha"><br><button class="button4">Iniciar trivia al azar </button></h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Curso</th>
+        <th>Tipo</th>
+        <th>Fecha actualización</th>
+        <th>Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-titulo="Nombre">Trivia 1                                      </td>
+        <td data-titulo="Curso">Curso 1</td>
+        <td data-titulo="Tipo">Ruleta</td>
+        <td data-titulo="Fecha actualización">2018-09-24</td>
+        <td class="centrado">
+          <a href="#" class="fas fa-play colorx"></a>
+        </td>
+      </tr>
+      <tr>
+        <td data-titulo="Nombre">Trivia 2</td>
+        <td data-titulo="Curso">Curso 2</td>
+        <td data-titulo="Tipo">Ruleta</td>
+        <td data-titulo="Fecha Actualizacion">2018-09-24</td>
+        <td class="centrado">
+          <a href="#" class="fas fa-play colorx"></a>
+        </td>
+      </tr>
+      <tr>
+        <td data-titulo="Nombre">Trivia 3</td>
+        <td data-titulo="Curso">Curso 3</td>
+        <td data-titulo="Tipo">Ruleta</td>
+        <td data-titulo="Fecha Actualizacion">2018-09-24</td>
+        <td class="centrado">
+          <a href="#" class="fas fa-play colorx"></a>
+        </td>
+      </tr>
+      <tr>
+        <td data-titulo="Nombre">Trivia 4</td>
+        <td data-titulo="Curso">Curso 4</td>
+        <td data-titulo="Tipo">Ruleta</td>
+        <td data-titulo="Fecha Actualizacion">2018-09-24</td>
+        <td class="centrado">
+          <a href="#" class="fas fa-play colorx"></a>
+        </td>
+      </tr>
+      <tr>
+        <td data-titulo="Nombre">Trivia 5</td>
+        <td data-titulo="Curso">Curso 5</td>
+        <td data-titulo="Tipo">Ruleta</td>
+        <td data-titulo="Fecha Actualizacion">2018-09-24</td>
+        <td class="centrado">
+          <a href="#" class="fas fa-play colorx"></a>
+        </td>
+      </tr>
+      <tr>
+          <td data-titulo="Nombre">Trivia 6</td>
+          <td data-titulo="Curso">Curso 6</td>
+          <td data-titulo="Tipo">Ruleta</td>
+          <td data-titulo="Fecha Actualizacion">2018-09-24</td>
+          <td class="centrado">
+            <a href="#" class="fas fa-play colorx"></a>
+          </td>
+        </tr>
+        <tr>
+          <td data-titulo="Nombre">Trivia 7</td>
+          <td data-titulo="Curso">Curso 7</td>
+          <td data-titulo="Tipo">Ruleta</td>
+          <td data-titulo="Fecha Actualizacion">2018-09-24</td>
+          <td class="centrado">
+            <a href="#" class="fas fa-play colorx"></a>
+          </td>
+        </tr>
+        <tr>
+          <td data-titulo="Nombre">Trivia 8</td>
+          <td data-titulo="Curso">Curso 8</td>
+          <td data-titulo="Tipo">Ruleta</td>
+          <td data-titulo="Fecha Actualizacion">2018-09-24</td>
+          <td class="centrado">
+            <a href="#" class="fas fa-play colorx"></a>
+          </td>
+        </tr>
+        <tr>
+          <td data-titulo="Nombre">Trivia 9</td>
+          <td data-titulo="Curso">Curso 9</td>
+          <td data-titulo="Tipo">Ruleta</td>
+          <td data-titulo="Fecha Actualizacion" >2018-09-24</td>
+          <td class="centrado">
+            <a href="#" class="fas fa-play colorx"></a>          </td>
+        </tr>
+        <tr>
+          <td data-titulo="Nombre">Trivia 10</td>
+          <td data-titulo="Curso">Curso 10</td>
+          <td data-titulo="Tipo">Ruleta</td>
+          <td data-titulo="Fecha Actualizacion">2018-09-24</td>
+          <td class="centrado">
+            <a href="#" class="fas fa-play colorx"></a>
+          </td>
+        </tr>
+    </tbody>
+  </table><br><br>
+  <div class="centrado">
+    <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a class="active" href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">»</a></li>
+    </ul>
 </div>
-</div>
+</form>    
+</div>   
 
 <!---->
 <!---->

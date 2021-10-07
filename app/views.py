@@ -56,3 +56,6 @@ def ranking(request):
 def iniciarPartida(request):
     return render(request,'app/iniciarPartida.html')
 
+def recuperarClave(request):
+    return render(request,'app/recuperarClave.html')
+
