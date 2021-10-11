@@ -1,0 +1,238 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block js %}
+{% endblock %}
+{% block css %}
+
+<script  src="https://kit.fontawesome.com/d5ff9e6164.js"   crossorigin="anonymous"></script>
+
+<style>
+    .button4 {
+        background-color: #FF395B;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        border-radius: 12px;
+    }
+
+    #main-container {
+    margin: 150px auto;
+    width: 600px;
+  }
+
+  table {
+    align-items: center;
+    background-color: white;
+    border-collapse: collapse;
+    font-family: 'Segoe UI';
+    width: 100%;
+    box-shadow: 0 0 20px rgb(163, 163, 163);
+    padding: 50%;
+  }
+  td,
+  th {
+    padding: 20px;
+  }
+  thead {
+    background-color: #f29d39;
+    color: white;
+    border-bottom: rgb(255, 90, 61) 5px solid;
+    text-align: left;
+  }
+
+  main {
+    padding: 1em 2em;
+  }
+
+  .centrado {
+    text-align: center;
+  }
+  .colorx {
+    color: grey;
+  }
+  tr:nth-child(even) {
+    background-color: #ddd;
+  }
+  tr:hover td{
+     background-color: #fcb7c1;
+ }
+
+  
+  /*modd*/
+
+  .derecha{text-align: right;padding: 0%;}
+
+  /* boton*/
+
+.button4 {
+background-color: #FF395B; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+/*paginación*/
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+ul.pagination li a.active {
+    background-color: #FF395B;
+    color: white;
+    border-radius: 5px;
+}
+
+ul.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+@media (max-width: 45em) {
+    table {
+      width: 100%;
+      font-size: 100%;
+    }
+    table td,
+    table th {
+      border: none;
+      text-align: center;
+    }
+    table tr {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid grey;
+      padding: 1em solid grey;
+    }
+    table td[data-titulo] {
+      display: flex;
+    }
+    table td[data-titulo]::before {
+      content: attr(data-titulo);
+      width: 100px;
+      color: rgb(82, 81, 81);
+      font-weight: bold;
+    }
+    table thead {display: none;}
+}
+</style>
+{% endblock %}
+{% block contenido %}
+
+<!-- Custom styles -->
+
+<br><br>
+<h1 class="sign-up__title"><i class="far fa-laugh-beam"></i> <i class="fas fa-ghost"></i> Lobby Partida <i class="fas fa-ghost"></i></a> <i class="far fa-laugh-beam"></i></h1>
+ 
+<div class="arriba ">
+    <form class="sign-up-form form" action="" method="">
+        
+        <!-- Participantes -->
+
+        <div class="row">
+            <!-- participante1 -->
+            <div class="col-md">
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Participante</th>
+                                <th>Equipo</th>
+                                <th>Contesta</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-titulo="Participante">Jugador 1</td>
+                                <td data-titulo="Equipo">Equipo 1</td>
+                                <td data-titulo="contesta"></td>                                                  
+                            </tr>     
+                            <tr>
+                                <td data-titulo="Participante">Jugador 2</td>
+                                <td data-titulo="Equipo">Equipo 1</td>
+                                <td data-titulo="contesta"></td>                                                  
+                            </tr>   
+                            <tr>
+                                <td data-titulo="Participante">Jugador 3</td>
+                                <td data-titulo="Equipo">Equipo 1</td>
+                                <td data-titulo="contesta"></td>                                                  
+                            </tr>   
+                            <tr>
+                                <td data-titulo="Participante">Jugador 4</td>
+                                <td data-titulo="Equipo">Equipo 1</td>
+                                <td data-titulo="contesta"></td>                                                  
+                            </tr>                         
+                            <tr>
+                                <td data-titulo="Participante">Jugador 5</td>
+                                <td data-titulo="Equipo">Equipo 1</td>
+                                <td data-titulo="contesta"></td>                                                  
+                            </tr>   
+                            <tr>
+                                <td data-titulo="Participante">Jugador 6</td>
+                                <td data-titulo="Equipo">Equipo 1</td>
+                                <td data-titulo="contesta"></td>                                                  
+                            </tr>   
+                            <tr>
+                                <td data-titulo="Participante">Jugador 7</td>
+                                <td data-titulo="Equipo">Equipo 1</td>
+                                <td data-titulo="contesta"></td>                                                  
+                            </tr>   
+                            <tr>
+                                <td data-titulo="Participante">Jugador 1</td>
+                                <td data-titulo="Equipo">Equipo 1</td>
+                                <td data-titulo="contesta"></td>                                                  
+                            </tr>   
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- /participante1 -->
+            <!-- product -->
+            <div class="col-md">
+                <div class="contenido centrado">
+                    <img src="{% static 'app/img/svg/ruleta.gif' %}" alt="">
+                </div>
+                <label class="form-label-wrapper">
+                    <p class="form-label"> <a href="#" class="fas fa-dice colorx"></a> Modo:</p>
+                <select class="form-select form-input" name="Modo">
+                    <option>Aleatorio</option>
+                    <option>Seleccion especifica</option>
+                </select>
+                </label>
+                <button class="button4 form-btn">
+                    Iniciar juego
+                </button>
+
+            </div>
+            </div>
+        
+
+    </form>
+
+
+
+
+
+
+
+{% endblock %}
