@@ -1,6 +1,5 @@
 from django.urls import path
-from .views import home, login, registro, page1, adminT, adminU, crearTrivia, crearUsuario, partida, ruleta,ranking,loginParticipante,iniciarPartida,recuperarClave
-
+from .views import home, login, registro, page1, adminT, adminU, crearTrivia, crearUsuario, partida, ruleta,ranking,loginParticipante,iniciarPartida,recuperarClave,score,lobbyP,lobbyAdm,configPartida,avatarP
 urlpatterns = [
     path('home/', home, name="home"),
     path('', login, name="login"),
@@ -16,4 +15,9 @@ urlpatterns = [
     path('loginParticipante/', loginParticipante, name="loginParticipante"),
     path('iniciarPartida/', iniciarPartida, name="iniciarPartida"),
     path('recuperarClave/', recuperarClave, name="recuperarClave"),
+    path('score/', score, name="score"),
+    path('lobbyP/', lobbyP, name="lobbyP"),
+    path('lobbyAdm/', lobbyAdm, name="lobbyAdm"),
+    path('configPartida/', configPartida, name="configPartida"),
+    path('avatarP/', avatarP, name="avatarP"),
 ]

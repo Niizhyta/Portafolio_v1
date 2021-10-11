@@ -59,3 +59,22 @@ def iniciarPartida(request):
 def recuperarClave(request):
     return render(request,'app/recuperarClave.html')
 
+def avatarP(request):
+    return render(request,'app/avatarP.html')
+
+def configPartida(request):
+    return render(request,'app/configPartida.html')
+
+def lobbyAdm(request):
+    return render(request,'app/lobbyAdm.html')
+
+def lobbyP(request):
+    return render(request,'app/lobbyP.html')
+
+def score(request):
+    return render(request,'app/score.html')
+
+
+
+
+

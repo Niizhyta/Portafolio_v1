@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login participantes</title>
+    <link rel="shortcut icon" href="../../static/app/img/svg/LOGOGW.png" type="image/x-icon">
+    <script  src="https://kit.fontawesome.com/d5ff9e6164.js"   crossorigin="anonymous"></script>
+    <style>
+        .button4 {
+            background-color: #F29D39;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            border-radius: 12px;
+        }
+
+        .tamano-pequeno {
+            height: 180px;
+            width: auto;
+            margin: auto;
+            display: block;
+        }
+
+        .centrado {
+            margin: auto;
+            text-align: center;
+        }
+
+        /* CSS DE SELECCION AVATAR */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .contenedor {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 0;
+        }
+
+        .selectbox {
+            width: 50%;
+            margin: auto;
+            position: relative;
+        }
+
+        .select {
+            width: 100%;
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, .16);
+            border-radius: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: .2s ease all;
+            margin-bottom: 30px;
+            padding: 30px;
+            position: relative;
+            z-index: 200;
+            border: 2px solid transparent;
+        }
+
+        .select.active,
+        .select:hover {
+            box-shadow: 0px 0px 0px rgba(0, 0, 0, .16);
+            border: 2px solid #ff395B;
+        }
+
+        .select.active:before {
+            content: "";
+            display: block;
+            height: 0;
+            width: 0;
+            border-top: 15px solid #ff395B;
+            border-right: 15px solid transparent;
+            border-left: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            position: absolute;
+            bottom: -30px;
+            left: calc(50% - 15px);
+
+        }
+
+        .select i {
+            font-size: 30px;
+            margin-left: 30px;
+            color: #ff395B;
+        }
+
+        .titulo {
+            margin-bottom: 10px;
+            color: rgb(238, 198, 65);
+            font-weight: 600;
+            font-size: 30px;
+        }
+
+        .descripcion {
+            font-size: 18px;
+            color: #868686;
+        }
+
+        .arriba {
+            margin-top: 5%;
+        }
+
+        .opciones {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, .16);
+            max-height: 500px;
+            overflow: auto;
+            z-index: 100;
+            width: 100%;
+            display: none;
+        }
+
+        .opciones.active {
+
+            display: block;
+            animation: fadeIn .3s forwards;
+        }
+
+        /*animacion*/
+        @keyframes fadeIn{
+            from{
+                transform: translateY(-200px) scale(.5);
+            }
+            to{
+                transform: translateY(0) scale(1);
+            }
+        }
+        /*Fin animacion*/
+
+        .contenido-opcion {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            transition: .2s ease all;
+        }
+
+        .opciones .contenido-opcion{            
+            padding: 30px;
+        }
+        .contenido-opcion img {
+            width: auto;
+            height: auto;
+            margin-right: 30px;
+        }
+
+        .opciones .contenido-opcion:hover {
+            background: #f29d39;
+        }
+
+        .opciones .contenido-opcion:hover .titulo,
+        .opciones .contenido-opcion:hover .descripcion {
+            color: #fff;
+        }
+
+        @media screen and (max-width: 800px){
+            .selectbox{
+                width: 90%;
+            }
+        }
+    </style>
+  
+      <link rel="stylesheet" href="../../static/app/css/style.css">
+      <link rel="stylesheet" href="../../static/app/css/style.min.css">  
+</head>
+<div>
+    
+<!---->
+<!---->
+<!---->
+<div class="main-wrapper">
+    <!-- ! Main nav -->
+<nav class="main-nav--bg">
+  <div class="container main-nav">    
+    <div class="main-nav-end">
+          
+      <button class="theme-switcher gray-circle-btn" type="button" title="Cambiar tema">
+        <span class="sr-only">Cambiar modo</span>
+        <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
+        <i class="moon-icon" data-feather="moon" aria-hidden="true"></i>
+      </button>    
+    </div>
+  </div>
+</nav>
+<!---->
+<!---->
+<!---->
+<div class="arriba">
+    <h1 class="main-title centrado">Customización Participante</h1>
+    <form class="form-label-wrapper" action="" method="">
+        <div class="selectbox">
+            <div class="select main-nav--bg" id="select">
+
+                <div class="contenido-select form-label">
+                    <h1 class="sign-up__title">Selecciona tu avatar</h1>
+                    <p class="form-label">Escoje el avatar que más te guste</p>
+                </div>
+                <i class="fas fa-angle-down"></i>
+            </div>
+            <div class="opciones " id="opciones">
+                <a href="#" class="opcion">
+                    <div class="contenido-opcion">
+                        <img src="../../static/app/img/avatarP/p1.PNG" alt=""> 
+                        <div class="textos">
+                            <h2 class="titulo"> loly</h2>
+                            <p class="descripcion">loli es entero longi</p>
+                        </div>
+                    </div>                   
+                </a>
+                <a href="#" class="opcion">
+                    <div class="contenido-opcion">
+                        <img src="../../static/app/img/avatarP/p2.PNG" alt=""> 
+                        <div class="textos">
+                            <h2 class="titulo"> loly</h2>
+                            <p class="descripcion">loli es entero longi</p>
+                        </div>                       
+                    </div>                   
+                </a>
+                <a href="#" class="opcion">
+                    <div class="contenido-opcion">
+                        <img src="../../static/app/img/avatarP/p3.PNG" alt="">   
+                        <div class="textos">
+                            <h2 class="titulo"> loly</h2>
+                            <p class="descripcion">loli es entero longi</p>
+                        </div>                     
+                    </div>                   
+                </a>
+                <a href="#" class="opcion">
+                    <div class="contenido-opcion">
+                        <img src="../../static/app/img/avatarP/p4.PNG" alt="">  
+                        <div class="textos">
+                            <h2 class="titulo"> loly</h2>
+                            <p class="descripcion">loli es entero longi</p>
+                        </div>                      
+                    </div>                   
+                </a>
+                <a href="#" class="opcion">
+                    <div class="contenido-opcion">
+                        <img src="../../static/app/img/avatarP/p5.PNG" alt="">  
+                        <div class="textos">
+                            <h2 class="titulo"> loly</h2>
+                            <p class="descripcion">loli es entero longi</p>
+                        </div>                      
+                    </div>                   
+                </a>
+                <a href="#" class="opcion">
+                    <div class="contenido-opcion">
+                        <img src="../../static/app/img/avatarP/p6.PNG" alt="">  
+                        <div class="textos">
+                            <h2 class="titulo"> loly</h2>
+                            <p class="descripcion">loli es entero longi</p>
+                        </div>                      
+                    </div>                   
+                </a>
+            </div>
+        </div>
+        <!-- ↓ PARA GUARDAR EL AVATAR EN EL PERFIL ↓ -->
+        <input type="hidden" name="avatarP" id="inputSelect" value=""> <!-- IMPUT OCULTO -->
+    </form>
+</div>   
+
+<!---->
+<!---->
+<!----> 
+    <script src="../../static/app/plugins/chart.min.js"></script>
+    <!-- Icons library -->
+    <script src="../../static/app/plugins/feather.min.js"></script>
+    <!--query-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Custom scripts -->
+    
+    <script src="../../static/app/js/script.js"></script>
+    <script>
+        const select = document.querySelector('#select');
+        const opciones = document.querySelector('#opciones');
+        const contenidoSelect = document.querySelector('#select .contenido-select');
+        const hiddenInput = document.querySelector('#inputSelect');
+
+        document.querySelectorAll('#opciones > .opcion').forEach((opcion) => {
+            opcion.addEventListener('click', (e) => {
+                e.preventDefault();
+                contenidoSelect.innerHTML = e.currentTarget.innerHTML;
+                select.classList.toggle('active');
+                opciones.classList.toggle('active');
+                hiddenInput.value = e.currentTarget.querySelector('.titulo').innerText;
+            });
+        });
+
+        select.addEventListener('click', () => {
+            select.classList.toggle('active');
+            opciones.classList.toggle('active');
+        });
+    </script>
+
+
+
+
+</body>
+</html>
