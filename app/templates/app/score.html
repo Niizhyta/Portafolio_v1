@@ -1,0 +1,453 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block js %}
+<script  src="https://kit.fontawesome.com/d5ff9e6164.js"   crossorigin="anonymous"></script>
+   <!-- Bootstrap core JavaScript-->
+   <script src="../../static/app/vendor/jquery/jquery.min.js"></script>
+   <script src="../../static/app/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Core plugin JavaScript-->
+   <script src="../../static/app/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+   <!-- Custom scripts for all pages-->
+   <script src="../../static/app/js/sb-admin-2.min.js"></script>
+
+   <!-- Page level plugins -->
+   <script src="../../static/app/vendor/chart.js/Chart.min.js"></script>
+
+   <!-- Page level custom scripts -->
+   <script src="../../static/app/js/demo/chart-area-demo.js"></script>
+   <script src="../../static/app/js/demo/chart-pie-demo.js"></script>
+{% endblock %}
+{% block css %}
+    <!-- Custom fonts for this template-->
+    <link href="../../static/app/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="../../static/app/css/sb-admin-2.min.css" rel="stylesheet">
+<style>
+    .borde {
+  
+  display: inline-flex;
+  list-style: none;
+  padding: 0;
+  margin-left: 5%;
+  margin-right: 5%;
+  border: rgb(99, 98, 98) 5px solid;
+}
+
+</style>
+
+<style>
+    .button4 {
+        background-color: #FF395B;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        border-radius: 12px;
+    }
+
+    #main-container {
+    margin: 150px auto;
+    width: 600px;
+  }
+
+  table {
+    align-items: center;
+    background-color: white;
+    border-collapse: collapse;
+    font-family: 'Segoe UI';
+    width: 100%;
+    box-shadow: 0 0 20px rgb(163, 163, 163);
+    padding: 50%;
+  }
+  td,
+  th {
+    padding: 20px;
+  }
+  thead {
+    background-color: #f29d39;
+    color: white;
+    border-bottom: rgb(255, 90, 61) 5px solid;
+    text-align: left;
+  }
+
+  main {
+    padding: 1em 2em;
+  }
+
+  .centrado {
+    text-align: center;
+  }
+  .colorx {
+    color: grey;
+  }
+  tr:nth-child(even) {
+    background-color: #ddd;
+  }
+  tr:hover td{
+     background-color: #fcb7c1;
+ }
+
+  
+  /*modd*/
+
+  .derecha{text-align: right;padding: 0%;}
+
+  /* boton*/
+
+.button4 {
+background-color: #FF395B; 
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  border-radius: 12px;
+}
+
+/*paginación*/
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+ul.pagination li a.active {
+    background-color: #FF395B;
+    color: white;
+    border-radius: 5px;
+}
+
+ul.pagination li a:hover:not(.active) {
+    background-color: #ddd;
+}
+@media (max-width: 45em) {
+    table {
+      width: 100%;
+      font-size: 100%;
+    }
+    table td,
+    table th {
+      border: none;
+      text-align: center;
+    }
+    table tr {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid grey;
+      padding: 1em solid grey;
+    }
+    table td[data-titulo] {
+      display: flex;
+    }
+    table td[data-titulo]::before {
+      content: attr(data-titulo);
+      width: 100px;
+      color: rgb(82, 81, 81);
+      font-weight: bold;
+    }
+    table thead {display: none;}
+}
+.espaciar{
+    margin-top: 10vh;
+}
+</style>
+{% endblock %}
+{% block contenido %}
+
+<!-- Custom styles -->
+
+   
+    <h1 class="sign-up__title"><i class="fas fa-award"></i>  RESULTADO GENERAL <i class="fas fa-award"></i></i></h1>
+     
+    <div class="arriba ">
+        <form class="sign-up-form form" action="" method="">
+            
+             <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Tablero</h1>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm  shadow-sm button4"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generar reporte</a>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Calificados (Mensual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">88</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Participantes (Anual)</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">548</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Earnings (Monthly) Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Crecimiento
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col-auto">
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">88%</div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 88%" aria-valuenow="50" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pending Requests Card Example -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-warning shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                                Solicitudes pendientes</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Resumen estadistico</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-area">
+                                        <canvas id="myAreaChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Tipos de trivias</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="chart-pie pt-4 pb-2">
+                                        <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Aleatorias
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Selección multiple
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-info"></i> Selección unica
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div class="row">
+
+                        <!-- Content Column -->
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Project Card Example -->
+                            <div class="card shadow mb-4">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Areas de capacitacion</h6>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="small font-weight-bold">Area 1 <span
+                                            class="float-right">20%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
+                                            aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Area 2 <span
+                                            class="float-right">40%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
+                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Area 3 <span
+                                            class="float-right">60%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar" role="progressbar" style="width: 60%"
+                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Area 4 <span
+                                            class="float-right">80%</span></h4>
+                                    <div class="progress mb-4">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <h4 class="small font-weight-bold">Area 5 <span
+                                            class="float-right">Completo!</span></h4>
+                                    <div class="progress">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>   
+                                    <br>                               
+                                    <h4 class="small font-weight-bold">Area 6 <span
+                                        class="float-right">Completo!</span></h4>
+                                    <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%"
+                                        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                 </div>
+                                </div>
+                            </div>
+
+                            
+                           
+
+                        </div>
+
+                        <div class="col-lg-6 mb-4">
+
+                            <!-- Illustrations -->
+                            <div class="card shadow mb-4">                              
+                                <div class="card-body">
+                                    <div class="text-center">
+                                        <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
+                                            src="../../static/app/img/svg/undraw_superhero_kguv.svg" alt="...">
+                                    </div>                                    
+                                </div>
+                            </div>                            
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- /.container-fluid -->                   
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+
+
+
+            
+    
+        </form>
+
+{% endblock %}

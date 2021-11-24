@@ -28,3 +28,53 @@ def registro(request):
 
 def page1(request):
     return render(request,'app/page1.html')
+
+def adminT(request):
+    return render(request,'app/adminT.html')
+
+def adminU(request):
+    return render(request,'app/adminU.html')
+
+def crearUsuario(request):
+    return render(request,'app/crearUsuario.html')
+
+def crearTrivia(request):
+    return render(request,'app/crearTrivia.html')
+
+def loginParticipante(request):
+    return render(request,'app/loginParticipante.html')
+
+def ruleta(request):
+    return render(request,'app/ruleta.html')
+
+def partida(request):
+    return render(request,'app/partida.html')
+    
+def ranking(request):
+    return render(request,'app/ranking.html')
+
+def iniciarPartida(request):
+    return render(request,'app/iniciarPartida.html')
+
+def recuperarClave(request):
+    return render(request,'app/recuperarClave.html')
+
+def avatarP(request):
+    return render(request,'app/avatarP.html')
+
+def configPartida(request):
+    return render(request,'app/configPartida.html')
+
+def lobbyAdm(request):
+    return render(request,'app/lobbyAdm.html')
+
+def lobbyP(request):
+    return render(request,'app/lobbyP.html')
+
+def score(request):
+    return render(request,'app/score.html')
+
+
+
+
+

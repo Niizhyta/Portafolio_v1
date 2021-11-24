@@ -15,6 +15,12 @@
     {% load static %}
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
     <link rel="stylesheet" href="{% static 'app/css/style.min.css' %}">
+	<style>
+      .tamano-pequeno{
+        height: 180px;
+        width: auto;
+      }
+      </style>
 
   </head>
 
@@ -22,7 +28,7 @@
     <div class="layer"></div>
     <main class="page-center">
       <div class="flex-left">
-        <img src="{% static 'app/img/svg/LOGOGW.png' %}" class="tamaño-pequeño" />
+        <img src="{% static 'app/img/svg/LOGOGW.png' %}" class="tamano-pequeno" />
       </div>
           {% if messages %}
             {%for mensaje in messages%}
